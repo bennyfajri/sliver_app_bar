@@ -3,7 +3,7 @@
 A playground for using sliver appbar, including using appbar, Tabbar, pull to refresh, change corner, etc
 
 ## Preview
-<img src="https://github.com/bennyfajri/sliver_app_bar/blob/main/assets/app-preview.gif" alt="drawing" width="422" height="634"/>
+<img src="https://github.com/bennyfajri/sliver_app_bar/blob/master/assets/app-preview.gif" alt="drawing" width="422" height="634"/>
 
 ## Getting Started
 
