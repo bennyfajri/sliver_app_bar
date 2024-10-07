@@ -5,34 +5,32 @@ class ProfilePageExample extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return SafeArea(
-      child: Material(
-        child: CustomScrollView(
-          slivers: [
-            SliverPersistentHeader(
-              pinned: true,
-              delegate: MySliverAppBar(expandedHeight: 200.0),
-            ),
-            SliverList(
-              delegate: SliverChildListDelegate([
-                const SizedBox(
-                  height: 120,
-                ),
-                listCardWidget(text1: 'Full Name', text2: 'John Doe'),
-                listCardWidget(text1: 'Gender:', text2: 'Male'),
-                listCardWidget(text1: 'Marital Status:', text2: 'Single'),
-                listCardWidget(text1: 'Email:', text2: 'mail@mail.com'),
-                listCardWidget(text1: 'Username:', text2: 'johndoe'),
-                listCardWidget(text1: 'Phone:', text2: '0812345678910'),
-                listCardWidget(text1: 'Country', text2: 'Konoha'),
-                listCardWidget(text1: 'City', text2: 'Konoha'),
-                listCardWidget(text1: 'Pincode:', text2: '999999'),
-                listCardWidget(text1: 'Company:', text2: 'Black Company'),
-                listCardWidget(text1: 'Position', text2: 'Manager'),
-              ]),
-            )
-          ],
-        ),
+    return Material(
+      child: CustomScrollView(
+        slivers: [
+          SliverPersistentHeader(
+            pinned: true,
+            delegate: MySliverAppBar(expandedHeight: 200.0),
+          ),
+          SliverList(
+            delegate: SliverChildListDelegate([
+              const SizedBox(
+                height: 120,
+              ),
+              listCardWidget(text1: 'Full Name', text2: 'John Doe'),
+              listCardWidget(text1: 'Gender:', text2: 'Male'),
+              listCardWidget(text1: 'Marital Status:', text2: 'Single'),
+              listCardWidget(text1: 'Email:', text2: 'mail@mail.com'),
+              listCardWidget(text1: 'Username:', text2: 'johndoe'),
+              listCardWidget(text1: 'Phone:', text2: '0812345678910'),
+              listCardWidget(text1: 'Country', text2: 'Konoha'),
+              listCardWidget(text1: 'City', text2: 'Konoha'),
+              listCardWidget(text1: 'Pincode:', text2: '999999'),
+              listCardWidget(text1: 'Company:', text2: 'Black Company'),
+              listCardWidget(text1: 'Position', text2: 'Manager'),
+            ]),
+          )
+        ],
       ),
     );
   }
@@ -83,7 +81,7 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
       fit: StackFit.expand,
       children: [
         Container(
-          alignment: Alignment.centerLeft,
+          alignment: Alignment.topLeft,
           decoration: BoxDecoration(
             borderRadius: const BorderRadius.only(
               bottomRight: Radius.circular(10),
@@ -123,7 +121,8 @@ class MySliverAppBar extends SliverPersistentHeaderDelegate {
         ),
         Positioned(
           top: expandedHeight / 4 - shrinkOffset,
-          left: MediaQuery.of(context).size.width / 4,
+          left: 0,
+          right: 0,
           child: Opacity(
             opacity: (1 - shrinkOffset / expandedHeight),
             child: Column(
